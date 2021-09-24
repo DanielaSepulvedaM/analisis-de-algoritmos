@@ -6,4 +6,12 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrdenamientoMercancia.Persistencia\OrdenamientoMercancia.Persistencia.csproj" />
+  </ItemGroup>
+
 </Project>
