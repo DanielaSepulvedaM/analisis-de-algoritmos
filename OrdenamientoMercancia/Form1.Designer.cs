@@ -44,6 +44,8 @@ namespace OrdenamientoMercancia
             this.txtRecords = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.btnDetener = new System.Windows.Forms.Button();
+            this.lblOrdenando = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -202,11 +204,34 @@ namespace OrdenamientoMercancia
             this.txtCantidad.TabIndex = 11;
             this.txtCantidad.Text = "1000";
             // 
+            // btnDetener
+            // 
+            this.btnDetener.Enabled = false;
+            this.btnDetener.Location = new System.Drawing.Point(589, 128);
+            this.btnDetener.Name = "btnDetener";
+            this.btnDetener.Size = new System.Drawing.Size(94, 29);
+            this.btnDetener.TabIndex = 12;
+            this.btnDetener.Text = "Detener";
+            this.btnDetener.UseVisualStyleBackColor = true;
+            this.btnDetener.Click += new System.EventHandler(this.btnDetener_Click);
+            // 
+            // lblOrdenando
+            // 
+            this.lblOrdenando.AutoSize = true;
+            this.lblOrdenando.Location = new System.Drawing.Point(36, 137);
+            this.lblOrdenando.Name = "lblOrdenando";
+            this.lblOrdenando.Size = new System.Drawing.Size(93, 20);
+            this.lblOrdenando.TabIndex = 13;
+            this.lblOrdenando.Text = "Ordenando...";
+            this.lblOrdenando.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 719);
+            this.Controls.Add(this.lblOrdenando);
+            this.Controls.Add(this.btnDetener);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtRecords);
@@ -241,6 +266,8 @@ namespace OrdenamientoMercancia
         private System.Windows.Forms.DataGridViewTextBoxColumn destino;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Button btnDetener;
+        private System.Windows.Forms.Label lblOrdenando;
     }
 }
 

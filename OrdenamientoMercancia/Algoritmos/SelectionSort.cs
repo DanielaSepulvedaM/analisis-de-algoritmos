@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace OrdenamientoMercancia.Algoritmos
 {
     public class SelectionSort : IOrdenamiento
     {
         private Stopwatch stopWatch = new Stopwatch();
+
         public double TiempoTranscurrido => stopWatch.Elapsed.TotalSeconds;
 
-        public T[] Ordenar<T>(IEnumerable<T> datos, Func<T, T, bool> comparador)
+
+        public T[] Ordenar<T>(IEnumerable<T> datos, Func<T, T, bool> comparador, Func<bool> cancelado)
         {
             var arr = datos.ToArray();
             var n = arr.Length;
@@ -22,10 +25,13 @@ namespace OrdenamientoMercancia.Algoritmos
             stopWatch.Restart();
             for (int i = 0; i < n - 1; i++)
             {
+                if (cancelado())
+                    break;
+
                 pivote = i;
                 for (int j = i + 1; j < n; j++)
                 {
-                    if (comparador(arr[j],arr[pivote]))
+                    if (comparador(arr[j], arr[pivote]))
                     {
                         pivote = j;
                     }
