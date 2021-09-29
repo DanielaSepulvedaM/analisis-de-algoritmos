@@ -23,11 +23,8 @@ namespace OrdenamientoMercancia.Algoritmos
             int pivote;
 
             stopWatch.Restart();
-            for (int i = 0; i < n - 1; i++)
+            for (int i = 0; i < n - 1 && !cancelado(); i++)
             {
-                if (cancelado())
-                    break;
-
                 pivote = i;
                 for (int j = i + 1; j < n; j++)
                 {

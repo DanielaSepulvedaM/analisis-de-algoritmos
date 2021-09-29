@@ -21,11 +21,8 @@ namespace OrdenamientoMercancia.Algoritmos
             T val;
 
             stopWatch.Restart();
-            for (i = 1; i < n; i++)
+            for (i = 1; i < n && !cancelado(); i++)
             {
-                if (cancelado())
-                    break;
-
                 val = arr[i];
                 flag = 0;
                 for (j = i - 1; j >= 0 && flag != 1;)
