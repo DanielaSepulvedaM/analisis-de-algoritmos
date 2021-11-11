@@ -20,18 +20,18 @@ namespace OrdenamientoMercancia
 
         private BackgroundWorker TareaSegundoPlano;
 
-
         public Form1()
         {
             InitializeComponent();
             using var context = new Bd();
 
-            var envios = context.Shipments.Take(50).ToList();
+            var envios = context.Shipments.Take(200).ToList();
             grid.DataSource = envios;
             txtRecords.Text = context.Shipments.Count().ToString();
 
             Algoritmos.SelectedIndex = 0;
 
+            //crea un hilo en segundo plano para correr el segundo plano 
             TareaSegundoPlano = new BackgroundWorker();
             TareaSegundoPlano.WorkerSupportsCancellation = true;
             TareaSegundoPlano.DoWork += new DoWorkEventHandler(OrdenarEnvios);
@@ -83,7 +83,7 @@ namespace OrdenamientoMercancia
 
             using var context = new Bd();
 
-            var datos = context.Shipments.Take(args.cantidad).ToList();
+            var datos = context.Shipments.Take(args.cantidad).ToList();//carga de la BD la cant de registros deseados
 
             Shipment[] datosOrdenados = null;
 
@@ -127,7 +127,7 @@ namespace OrdenamientoMercancia
 
             var res = (Resultado)e.Result;
 
-            grid.DataSource = res.Envios.Take(50).ToList();
+            grid.DataSource = res.Envios.Take(200).ToList();
             txtTiempoTranscurrido.Text = res.TiempoTranscurrido.ToString();
             grid.Enabled = true;
             btnDetener.Enabled = false;
@@ -138,6 +138,21 @@ namespace OrdenamientoMercancia
         private void btnDetener_Click(object sender, EventArgs e)
         {
             TareaSegundoPlano.CancelAsync();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

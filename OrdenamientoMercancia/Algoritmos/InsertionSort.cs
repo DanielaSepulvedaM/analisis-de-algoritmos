@@ -23,7 +23,7 @@ namespace OrdenamientoMercancia.Algoritmos
             stopWatch.Restart();
             for (i = 1; i < n; i++)
             {
-                if (cancelado())
+                if (cancelado())//cancelar
                     break;
 
                 val = arr[i];
