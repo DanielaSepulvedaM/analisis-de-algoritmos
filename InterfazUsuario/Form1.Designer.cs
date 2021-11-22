@@ -328,12 +328,14 @@ namespace InterfazUsuario
             // 
             // btnComparar
             // 
-            this.btnComparar.Location = new System.Drawing.Point(22, 110);
+            this.btnComparar.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnComparar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComparar.Location = new System.Drawing.Point(22, 111);
             this.btnComparar.Name = "btnComparar";
-            this.btnComparar.Size = new System.Drawing.Size(75, 23);
+            this.btnComparar.Size = new System.Drawing.Size(194, 23);
             this.btnComparar.TabIndex = 19;
-            this.btnComparar.Text = "Comparar ";
-            this.btnComparar.UseVisualStyleBackColor = true;
+            this.btnComparar.Text = "COMPARAR ALGORITMOS";
+            this.btnComparar.UseVisualStyleBackColor = false;
             this.btnComparar.Click += new System.EventHandler(this.btnComparar_Click);
             // 
             // Form1
